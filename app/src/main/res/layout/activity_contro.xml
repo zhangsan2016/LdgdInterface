@@ -44,6 +44,7 @@
                     android:textSize="35sp" />
 
                 <TextView
+                    android:id="@+id/tv_save"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
@@ -74,12 +75,12 @@
                     android:textSize="35sp" />
 
                 <TextView
+                    android:id="@+id/tv_query"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
                     android:layout_margin="20dp"
-                    android:text="存储"
+                    android:text="查询"
                     android:textColor="#fff"
                     android:textSize="50dp"
                     android:visibility="gone" />
@@ -104,12 +105,12 @@
                     android:textSize="35sp" />
 
                 <TextView
+                    android:id="@+id/tv_send"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"
                     android:layout_margin="20dp"
-                    android:text="存储"
+                    android:text="发送"
                     android:textColor="#fff"
                     android:textSize="50dp"
                     android:visibility="gone" />
@@ -120,9 +121,9 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="2">
 
             <FrameLayout

@@ -36,6 +36,8 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
 
     private ImageView iv_break;
 
+    private List<TextView> textViewsList;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,7 +56,7 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
         position = Integer.parseInt(positionStr);
 
         BaseFragment baseFragment = getFragment(position);
-        switchFragment(mContext, baseFragment);
+        switchFragment(mContext, baseFragment,textViewsList.get(position));
 
         tvTiming.setOnClickListener(this);
         tvParameter.setOnClickListener(this);
@@ -77,6 +79,11 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
         tvParameter = (TextView) findViewById(R.id.tv_parameter);
         tvDebug = (TextView) findViewById(R.id.tv_debug);
         iv_break = (ImageView) this.findViewById(R.id.iv_break);
+
+        textViewsList = new ArrayList<>();
+        textViewsList.add((TextView) findViewById(R.id.tv_save));
+        textViewsList.add((TextView) findViewById(R.id.tv_query));
+        textViewsList.add((TextView) findViewById(R.id.tv_send));
     }
 
 
@@ -94,7 +101,7 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
         }
 
         BaseFragment baseFragment = getFragment(position);
-        switchFragment(mContext, baseFragment);
+        switchFragment(mContext, baseFragment,textViewsList.get(position));
     }
 
 
@@ -107,7 +114,7 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
         return null;
     }
 
-    private void switchFragment(Fragment fromFragment, BaseFragment nextFragment) {
+    private void switchFragment(Fragment fromFragment, BaseFragment nextFragment,TextView textView) {
 
         if (mContext != nextFragment) {
 
@@ -133,6 +140,15 @@ public class ControlAct extends FragmentActivity implements View.OnClickListener
                     }
 
                     transaction.show(nextFragment).commit();
+                }
+
+                // 显示对应的操作
+                for (int i = 0; i < textViewsList.size(); i++) {
+                   if(textView == textViewsList.get(i)){
+                       textViewsList.get(i).setVisibility(View.VISIBLE);
+                   }else {
+                       textViewsList.get(i).setVisibility(View.GONE);
+                   }
                 }
             }
         }
