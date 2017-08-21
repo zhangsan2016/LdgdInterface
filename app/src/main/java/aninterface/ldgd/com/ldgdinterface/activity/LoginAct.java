@@ -24,8 +24,9 @@ public class LoginAct extends Activity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginAct.this,MainAct.class);
+                Intent intent = new Intent(LoginAct.this, MainAct.class);
                 startActivity(intent);
+                LoginAct.this.finish();
             }
         });
     }
