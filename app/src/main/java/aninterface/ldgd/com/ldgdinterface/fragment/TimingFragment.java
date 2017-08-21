@@ -15,7 +15,7 @@ public class TimingFragment extends BaseFragment {
 
     @Override
     public View initView() {
-       View view = View.inflate(mContext, R.layout.fragmet_timing,null);
+        View view = View.inflate(mContext, R.layout.fragmet_timing, null);
 
         return view;
     }
